@@ -15,4 +15,3 @@ echo "finished setting up essentials. VPS is rebooting. The script is sleeping 2
 sleep 20
 ssh $username@$host 'bash -s' < platform.sh
 ssh $username@$host 'bash -s' < nginx.sh $ovh_domain $ovh_application_key $ovh_application_secret $ovh_consumer_key
-sh nginx.sh $ovh_domain $ovh_application_key $ovh_application_secret $ovh_consumer_key
