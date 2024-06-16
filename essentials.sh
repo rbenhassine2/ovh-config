@@ -3,13 +3,18 @@
 export DEBIAN_FRONTEND=noninteractive
 export NEEDRESTART_MODE=a
 
-#update the bask packages
+#update the base packages
+echo "apt_preserve_sources_list: true" | sudo tee -a /etc/cloud/cloud.cfg
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.original
+sudo sed -i -e 's/nova.clouds.//g' /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get -y --fix-broken install
 
 #install min dependencies
 sudo apt-get install git curl wget build-essential -y
+git config --global user.name "Raouf Ben Hassine"
+git config --global user.email raouf.ben.hassine.89@gmail.com
 
 #install zsh
 sudo apt-get install zsh -y

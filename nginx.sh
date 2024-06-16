@@ -13,7 +13,7 @@ dns_ovh_consumer_key = $4
 EOT
 
 #install nginx and certbot 
-sudo apt-get install nginx-extras certbot python3-certbot-nginx python3-certbot-dns-ovh -y 
+sudo apt-get install --no-install-recommends nginx-extras certbot python3-certbot-nginx python3-certbot-dns-ovh -y 
 
 sudo rm /etc/nginx/sites-enabled/default
 sudo rm /etc/nginx/sites-available/default
