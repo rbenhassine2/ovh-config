@@ -63,6 +63,8 @@ sudo mv composer.phar /usr/local/bin/composer
 
 echo 'export PATH=$PATH:$HOME/.config/composer/vendor/bin' | tee -a ~/.zshrc
 
+source ~/.zshrc
+
 # install phalcon devtools
 composer global require phalcon/devtools
 
