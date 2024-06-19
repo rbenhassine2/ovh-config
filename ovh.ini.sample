@@ -1,4 +1,0 @@
-dns_ovh_endpoint = ovh-eu OR ovh-us
-dns_ovh_application_key = 
-dns_ovh_application_secret = 
-dns_ovh_consumer_key = 

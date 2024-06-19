@@ -3,14 +3,7 @@
 export DEBIAN_FRONTEND=noninteractive
 export NEEDRESTART_MODE=a
 
-[ -e .ovh.ini ] && rm -- .ovh.ini
-
-cat <<EOT >> .ovh.ini
-dns_ovh_endpoint = $1
-dns_ovh_application_key = $2
-dns_ovh_application_secret = $3
-dns_ovh_consumer_key = $4
-EOT
+sudo add-apt-repository ppa:ondrej/nginx-mainline -y
 
 #install nginx and certbot 
 sudo apt-get install --no-install-recommends nginx-extras certbot python3-certbot-nginx python3-certbot-dns-ovh -y 
@@ -33,7 +26,9 @@ server {
     }
 }
 EOT
+
 sudo cp default /etc/nginx/sites-available/default
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
 
+#this command needs to be observed
 sudo certbot --nginx -d rbenhassine.com
